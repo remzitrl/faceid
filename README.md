@@ -4,4 +4,4 @@ Furthermore, I took my project beyond a solely security-focused approach by intr
 
 I didn't focus much on design because the primary emphasis is on facial recognition technology and security. I didn't prioritize HTML and CSS aspects, as the fundamental goal of the project is to highlight facial recognition features, with minimal attention given to responsive design elements.
 
-<img src=""> </img>
+<img src="Project/image1" />
