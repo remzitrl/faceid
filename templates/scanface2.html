@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock screen</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body class="">
+		<div id="light"></div>
+		<div class="main" >
+			<div class="side left">
+				<div class="dash left top"></div>
+
+				<div class="audio">
+					<div class="side ringer"></div>
+					<div class="side volume up"></div>
+					<div class="side volume down"></div>
+				</div>
+
+				<div class="dash left bottom"></div>
+			</div>
+
+				<div class="iphone" id="iphone">
+					<div class="dash top"></div>
+
+					<div style="display:block;opacity:0" id="lockpage">
+						<div class="inner" id="inner">
+							<div class="top">
+								<div class="left">
+									<!-- <p>Spectrum</p> -->
+								</div>
+								<div class="center" id="center">	
+									<div class="mic" id="mic">
+									</div>
+
+									<div class="cam">
+									</div>
+								</div>
+
+								<div class="right">
+									<div class="container">
+										<ion-icon name="cellular" class="cellular"></ion-icon>
+
+										<img src="static/Images/Icons/wifi.png" class="wifi">
+
+										<img src="static/Images/Icons/battery.png" class="battery">
+									</div>
+
+									<!-- <div class="line"></div> -->
+								</div>
+							</div>
+
+							<div class="content" id="content">
+								<img src="static/Images/Icons/lock.png" class="lock">
+
+								<h1 class="time" id="clock">9:41</h1>
+
+								<h1 class="date" id="date">Tuesday, January 9</h1>
+							</div>
+
+							<div class="buttons" id="bottom">
+								<button class="torch" id="torchBtn" onclick="changeColorTorch()">
+									<img src="static/Images/Icons/torch.png" id="torchImg">
+								</button>
+								
+								<a onclick="openCamera()">
+									<button class="camera" id="cameraBtn">
+										<img src="static/Images/Icons/camera.png" id="cameraImg">
+									</button>
+								</a>
+							</div>
+
+							<p class="swipe" id="swipe">Touch bar to unlock</p>
+
+							<a onclick="openHomePageScreen()">
+								<div class="home"></div>
+							</a>
+
+						</div>
+					</div>
+       
+					<div style="display:none" class="passcode" id="passpage">
+						<div class="inner passcode" id="inner">
+							<div class="top">
+								<div class="left"></div>
+		
+								<div class="center" id="center">	
+									<div class="mic" id="mic">
+									</div>
+		
+									<div class="cam">
+									</div>
+								</div>
+		
+								<div class="right">
+									<ion-icon name="cellular" class="cellular"></ion-icon>
+		
+									<img src="static/Images//Icons/wifi.png" class="wifi">
+		
+									<img src="static/Images//Icons/battery.png" class="battery">
+								</div>
+							</div>
+		
+							<div class="content">
+								<img src="static/Images//Icons/lock.png" class="lock">
+		
+								<div class="passcode">
+									<h3>Enter Passcode</h3>
+		
+									<div class="dots">
+										<div class="dot" id="dot1"></div>
+		
+										<div class="dot" id="dot2"></div>
+		
+										<div class="dot" id="dot3"></div>
+		
+										<div class="dot" id="dot4"></div>
+									</div>
+		
+									<div class="keypad">
+										<button class="key" onclick="addFilledDot(1)">
+											<div class="num alone">1</div>
+											<div class="letters"></div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(2)">
+											<div class="num">2</div>
+											<div class="letters">ABC</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(3)">
+											<div class="num">3</div>
+											<div class="letters">DEF</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(4)">
+											<div class="num">4</div>
+											<div class="letters">GHI</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(5)">
+											<div class="num">5</div>
+											<div class="letters">JKL</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(6)">
+											<div class="num">6</div>
+											<div class="letters">MNO</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(7)">
+											<div class="num">7</div>
+											<div class="letters">PQRS</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(8)">
+											<div class="num">8</div>
+											<div class="letters">TUV</div>
+										</button>
+		
+										<button class="key" onclick="addFilledDot(9)">
+											<div class="num">9</div>
+											<div class="letters">WXYZ</div>
+										</button>
+		
+										<button class="key zero" onclick="addFilledDot(0)">
+											<div class="num">0</div>
+											<div class="letters"></div>
+										</button>
+									</div>
+								</div>
+		
+								<div class="bottom"> 
+									<p>Emergency</p>
+		
+									<a onclick="turnOffLockScreen()">
+										<p>Cancel</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div style="display:none" class="home" id="homepage">
+						<div class="inner" id="inner">
+							<div class="top">
+								<div class="left">
+									<p class="time" id="clock2"></p>
+								</div>
+								<div class="center">	
+									<div class="mic">
+									</div>
+		
+									<div class="cam">
+									</div>
+								</div>
+		
+								<div class="right">
+									<ion-icon name="cellular" class="cellular"></ion-icon>
+		
+									<img src="static/Images/Icons/wifi.png" class="wifi">
+		
+									<img src="static/Images/Icons/battery.png" class="battery">
+								</div>
+							</div>
+		
+		
+							<div class="content">
+								<div class="icons">
+									<div class="appContainer">
+										<img src="static/Images/Apps/1.png" class="app">
+		
+										<p>FaceTime</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/2.png" class="app">
+		
+										<p>Calendar</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/3.png" class="app">
+		
+										<p>Photos</p>
+									</div>
+		
+									<div class="appContainer">
+										<a href="camera.html">
+											<img src="static/Images/Apps/4.png" class="app">
+										</a>
+		
+										<p>Camera</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/5.png" class="app">
+		
+										<p>Mail</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/6.png" class="app">
+		
+										<p>Clock</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/7.png" class="app">
+		
+										<p>Maps</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/8.png" class="app">
+		
+										<p>Weather</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/9.png" class="app">
+		
+										<p>Reminders</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/10.png" class="app">
+		
+										<p>Notes</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/11.png" class="app">
+		
+										<p>Stocks</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/12.png" class="app">
+		
+										<p>News</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/13.png" class="app">
+		
+										<p>Books</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/14.png" class="app">
+		
+										<p>App Store</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/15.png" class="app">
+		
+										<p>Podcasts</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/16.png" class="app">
+		
+										<p>TV</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/17.png" class="app">
+		
+										<p>Health</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/18.png" class="app">
+		
+										<p>Home</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/19.png" class="app">
+		
+										<p>Wallet</p>
+									</div>
+		
+									<div class="appContainer">
+										<img src="static/Images/Apps/20.png" class="app">
+		
+										<p>Settings</p>
+									</div>
+		
+								</div>
+		
+								<div class="dots">
+									<div class="dot"></div>
+		
+									<div class="dot active"></div>
+		
+									<div class="dot"></div>
+								</div>
+		
+								<div class="dock">
+									<img src="static/Images/Apps/phone.png" class="app">
+		
+									<img src="static/Images/Apps/safari.png" class="app">
+		
+									<img src="static/Images/Apps/iMessage.png" class="app">
+		
+									<img src="static/Images/Apps/music.png" class="app">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div style="display:none" class="iphoneCam" id="campage"> 
+						<div class="top">
+							<div class="center">
+								<div class="mic"></div>
+								<div class="cam"></div>
+							</div>
+						</div>
+						<div class="content">
+					
+								<div class="top">
+									<img src="static/Images/Icons/flash.png" class="flash">
+		
+									<img src="static/Images/Icons/show.png" class="show">
+		
+									<img src="static/Images/Icons/live.png" class="live">
+								</div>
+								<div>
+								<img class="webcam"  src="{{ url_for('video_feed') }}" width="640" height="515">
+								</div>
+								<div class="bottom">
+									<div class="zoom">
+										<div class="level _5">.5</div>
+										
+										<div class="level _1">1<span class="x">x</span></div>
+		
+										<div class="level _2">2</div>
+									</div>
+		
+									<div class="mode">
+										<p>
+											<span class="bent slo">
+												<span class="last0">S</span>
+												<span class="last1">L</span>
+												<span class="last2">O</span>
+											</span>
+										-MO</p>
+										<p>VIDEO</p>
+										<p class="active">PHOTO</p>
+										<p>PORTRAIT</p>
+										<p>PA
+											<span class="bent no">
+												<span class="last1">N</span>
+												<span class="last0">O</span>
+											</span>
+										</p>
+									</div>
+		
+									<div class="main">
+										<div class="photos"></div>
+		
+										<div class="border">
+											<button class="capture"></button>
+										</div>
+		
+										<div class="background">
+											<img src="static/Images/Icons/rotate.png" class="rotate">
+										</div>
+									</div>	
+								</div>
+						</div>
+
+						<a onclick="openHomeScreen()">
+							<div class="home"></div>
+						</a>
+					</div>
+
+					<div class="dash bottom"></div>
+				</div>
+
+			<div class="side right">
+				<div class="dash right top"></div>
+
+				<div class="side power" onclick="turnOff()"></div>
+
+				<div class="dash right bottom"></div>
+			</div>
+		</div>
+
+		<img id="scanface" src="{{ url_for('video_feed') }}" width="640" height="480">
+    	<script src="static/script.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
